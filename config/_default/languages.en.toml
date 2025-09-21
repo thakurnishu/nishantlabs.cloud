@@ -2,17 +2,18 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Home"
+#title = "Home"
 
 [params]
   displayName = "EN"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  # logo = "img/logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
+  logo = "img/logo-v2-inverted.png"
+  secondaryLogo = "img/logo-v2.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
+  favicon = "img/te.png"
 
 [params.author]
   name = "Nishant Singh"
