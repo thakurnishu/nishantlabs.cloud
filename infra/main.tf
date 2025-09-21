@@ -53,9 +53,6 @@ module "cloud_run" {
   service_account = module.service_account.email
   public_access   = var.public_access
 
-
-  secret_env_vars = var.secret_env_vars
-
   depends_on = [
     google_artifact_registry_repository_iam_member.reader_access
   ]
