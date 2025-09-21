@@ -17,16 +17,6 @@ module "service_account" {
   ]
 }
 
-module "grant_secret_access" {
-  source                = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/secret_access?ref=v1.0.0"
-  service_account_email = module.service_account.email
-  secret_ids            = var.secret_ids
-
-  depends_on = [
-    module.service_account
-  ]
-}
-
 data "google_artifact_registry_repository" "existing_repo" {
   location      = var.region
   repository_id = var.artifact_registry_repository_id
@@ -67,7 +57,6 @@ module "cloud_run" {
   secret_env_vars = var.secret_env_vars
 
   depends_on = [
-    module.grant_secret_access,
     google_artifact_registry_repository_iam_member.reader_access
   ]
 }
