@@ -1,4 +1,4 @@
-name: Build And Deploy
+name: Build
 
 env:
   WORKLOAD_IDENTITY: 'projects/307684202109/locations/global/workloadIdentityPools/workload-identity-pool/providers/github-thakurnishu'
