@@ -43,14 +43,12 @@ jobs:
         persist-credentials: true
 
     - id: 'applierAuth'
-      if: github.event_name == 'workflow_dispatch'
       uses: ./.github/actions/authenticate-gcp
       with:
         workload_identity_provider: ${{ env.WORKLOAD_IDENTITY }}
         service_account: ${{ env.SERVICE_ACCOUNT }} 
 
     - name: 'Set up Cloud SDK'
-      if: github.event_name == 'workflow_dispatch'
       uses: 'google-github-actions/setup-gcloud@v2'
       with:
         version: '>= 363.0.0'
