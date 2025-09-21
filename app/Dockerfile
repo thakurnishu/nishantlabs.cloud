@@ -6,7 +6,7 @@ ENV HUGO_BASEURL=${HUGO_BASEURL}
 # Build site
 COPY . /src
 # Replace below build command at will.
-RUN hugo --minify --enableGitInfo
+RUN hugo --minify
 
 FROM hugomods/hugo:nginx
 # Copy the generated files to keep the image as small as possible.
