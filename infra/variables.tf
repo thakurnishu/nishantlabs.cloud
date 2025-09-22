@@ -36,3 +36,7 @@ variable "port" {
 variable "cpu" {
   type = number
 }
+variable "labels" {
+  type = map(string)
+}
+

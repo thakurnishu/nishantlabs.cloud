@@ -36,7 +36,7 @@ resource "google_artifact_registry_repository_iam_member" "reader_access" {
 }
 
 module "cloud_run" {
-  source = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/cloud_run?ref=v1.1.0"
+  source = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/cloud_run?ref=v1.2.0"
 
   cloud_run_name      = var.cloud_run_name
   location            = var.region
@@ -52,6 +52,7 @@ module "cloud_run" {
 
   service_account = module.service_account.email
   public_access   = var.public_access
+  labels          = var.labels
 
   depends_on = [
     google_artifact_registry_repository_iam_member.reader_access

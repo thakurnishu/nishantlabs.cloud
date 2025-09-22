@@ -11,3 +11,8 @@ memory         = "128Mi"
 public_access  = true
 port           = 80
 cpu            = 1
+
+labels = {
+  env = "prod"
+  app = "portfolio"
+}
