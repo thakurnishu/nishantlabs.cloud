@@ -1,42 +1,19 @@
-variable "zone" {
-  type = string
-}
-variable "project_id" {
-  type = string
-}
 variable "region" {
   type = string
 }
-variable "artifact_registry_repository_id" {
+variable "bucket_name" {
+  type = string
+}
+variable "project_name" {
   type = string
 }
 
-variable "ingress" {
+variable "acm_region" {
   type = string
 }
-
-variable "deletion_protection" {
-  type = bool
-}
-variable "cloud_run_name" {
+variable "website_custom_domain" {
   type = string
 }
-variable "image" {
-  type = string
-}
-variable "memory" {
-  type = string
-}
-variable "public_access" {
-  type = bool
-}
-variable "port" {
-  type = number
-}
-variable "cpu" {
-  type = number
-}
-variable "labels" {
+variable "tags" {
   type = map(string)
 }
-

@@ -1,15 +1,16 @@
 terraform {
   required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "6.46.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = "6.14.1"
     }
   }
-  backend "gcs" {}
+
+  backend "s3" {
+    use_lockfile = true
+  }
 }
 
-provider "google" {
-  project = var.project_id
-  region  = var.region #"us-central1"
-  zone    = var.zone   #"us-central1-a"
+provider "aws" {
+  region = var.region
 }

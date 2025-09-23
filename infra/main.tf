@@ -1,60 +1,15 @@
-module "project_services" {
-  source = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/project_services?ref=v1.0.0"
-  services = [
-    "cloudresourcemanager.googleapis.com",
-    "run.googleapis.com",
-  ]
-}
+module "s3_with_cloudfront" {
+  source             = "git::https://github.com/thakurnishu/terraform_modules.git//aws/cloudfront_s3_website?ref=v2.4.1"
+  
+  bucket_name = var.bucket_name
+  project_name = var.project_name
 
-module "service_account" {
-  source = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/service_account?ref=v1.0.0"
+  enable_custom_domain = true
+  website_custom_domain = var.website_custom_domain
+  acm_region = var.acm_region
 
-  account_id   = "${var.cloud_run_name}-sa"
-  display_name = "${var.cloud_run_name}-sa"
+  use_cloudfront_function = true
+  function_code = file("url-rewrite.js")
 
-  depends_on = [
-    module.project_services
-  ]
-}
-
-data "google_artifact_registry_repository" "existing_repo" {
-  location      = var.region
-  repository_id = var.artifact_registry_repository_id
-  depends_on = [
-    module.service_account
-  ]
-}
-
-resource "google_artifact_registry_repository_iam_member" "reader_access" {
-  location   = data.google_artifact_registry_repository.existing_repo.location
-  repository = data.google_artifact_registry_repository.existing_repo.name
-  role       = "roles/artifactregistry.reader"
-  member     = "serviceAccount:${module.service_account.email}"
-  depends_on = [
-    data.google_artifact_registry_repository.existing_repo
-  ]
-}
-
-module "cloud_run" {
-  source = "git::https://github.com/thakurnishu/terraform_modules.git//gcp/cloud_run?ref=v1.2.0"
-
-  cloud_run_name      = var.cloud_run_name
-  location            = var.region
-  deletion_protection = var.deletion_protection
-  ingress             = var.ingress
-
-  image  = var.image
-  port   = var.port
-  cpu    = var.cpu
-  memory = var.memory
-
-  cpu_idle = true
-
-  service_account = module.service_account.email
-  public_access   = var.public_access
-  labels          = var.labels
-
-  depends_on = [
-    google_artifact_registry_repository_iam_member.reader_access
-  ]
+  tags = var.tags
 }
