@@ -69,6 +69,7 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
           echo "${{ secrets.TERRAFORM_TFVARS }}" > terraform.tfvars
+          echo terraform.tfvars
 
       - id: plan
         name: Terraform Plan
