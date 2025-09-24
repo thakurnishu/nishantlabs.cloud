@@ -3,6 +3,7 @@ name: "Terraform Infra"
 env:
   PREFIX: 'portfolio'
   TERRAFORM_VERSION: '1.9.6'
+  AWS_REGION: us-east-1
   WORKING_DIRECTORY: 'infra'
 
 on:
