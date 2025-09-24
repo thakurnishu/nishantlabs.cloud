@@ -28,13 +28,12 @@ jobs:
       id-token: 'write'
       pull-requests: 'write'
     runs-on: ubuntu-latest
-    container:
-      image: hugomods/hugo:go
 
     steps:
     - uses: actions/checkout@v5
       with:
         persist-credentials: true
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
         submodules: recursive
 
     - name: Configure AWS Credentials
@@ -42,6 +41,12 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         aws-region: ${{ env.AWS_REGION }}
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.150.0'
+        extended: true
 
     - name: Hugo build
       shell: bash
