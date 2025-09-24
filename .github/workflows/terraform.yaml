@@ -68,7 +68,7 @@ jobs:
         shell: bash
         working-directory: ${{ env.WORKING_DIRECTORY }}
         run: |
-          echo "${{ secrets.TERRAFORM_TFVARS }}" > terraform.tfvars
+          echo "${{ env.TERRAFORM_TFVARS }}" > terraform.tfvars
           cat terraform.tfvars
 
       - id: plan
