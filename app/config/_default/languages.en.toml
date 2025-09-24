@@ -17,18 +17,17 @@ weight = 1
 
 [params.author]
   name = "Nishant Singh"
-  email = "nishantsingh.work.503@gmail.com"
   image = "https://avatars.githubusercontent.com/u/90508814?v=4"
   imageQuality = 96
-  headline = "DevOps Enginner | Tech Enthusiast | Helping Organizations automate stuff"
+  #headline = "DevOps Enginner | Tech Enthusiast | Helping Organizations automate stuff"
   bio = '''
   I'm a Tech Enthusiast and DevOps Engineer with a passion for automation and efficiency. I love to explore new technologies and share my knowledge with others. My goal is to help organizations streamline their processes and improve their workflows through automation.
   '''
   links = [
+    { email = "mailto:nishantsingh.work.503@gmail.com" },
     { linkedin = "https://www.linkedin.com/in/contact-nishant-singh/" },
     { github = "https://github.com/thakurnishu" },
     { x-twitter = "https://x.com/ntsh53" },
-#     { email = "mailto:nishantsingh.work.503@gmail.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
