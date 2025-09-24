@@ -63,21 +63,15 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
         run: terraform validate -no-color
 
-      - id: populate-tfvars
-        name: Populate terraform.tfvars
-        shell: bash
-        working-directory: ${{ env.WORKING_DIRECTORY }}
-        run: |
-          echo "${{ env.TERRAFORM_TFVARS }}" > terraform.tfvars
-          cat terraform.tfvars
-
       - id: plan
         name: Terraform Plan
         if: github.event.inputs.action == 'plan'
         shell: bash
         working-directory: ${{ env.WORKING_DIRECTORY }}
+        env: 
+          TF_VAR_bucket_name: ${{ secrets.PORTFOLIO_BUCKET_NAME }}
         run: |
-          terraform plan -input=false -no-color
+          terraform plan -input=false -no-color 
 
       - id: apply
         name: Terraform Apply
