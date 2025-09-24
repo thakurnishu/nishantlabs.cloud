@@ -1,7 +1,7 @@
 name: "Terraform Infra"
 
 env:
-  PREFIX: 'portfolio'
+  KEY: 'portfolio'
   TERRAFORM_VERSION: '1.9.6'
   AWS_REGION: us-east-1
   WORKING_DIRECTORY: 'infra'
@@ -56,7 +56,7 @@ jobs:
           terraform init \
                 -reconfigure \
                 -backend-config="bucket=${{ secrets.BACKEND_BUCKET }}" \
-                -backend-config="prefix=${{ env.PREFIX }}" 
+                -backend-config="key=${{ env.KEY }}" 
 
       - id: validate
         shell: bash
