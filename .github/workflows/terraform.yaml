@@ -78,6 +78,8 @@ jobs:
         if: github.event.inputs.action == 'create' || github.ref == 'refs/heads/main'
         shell: bash
         working-directory: ${{ env.WORKING_DIRECTORY }}
+        env: 
+          TF_VAR_bucket_name: ${{ secrets.PORTFOLIO_BUCKET_NAME }}
         run: |
           terraform apply -input=false -auto-approve -no-color
 
@@ -86,5 +88,7 @@ jobs:
         if: github.event.inputs.action == 'destroy'
         shell: bash
         working-directory: ${{ env.WORKING_DIRECTORY }}
+        env: 
+          TF_VAR_bucket_name: ${{ secrets.PORTFOLIO_BUCKET_NAME }}
         run: |
           terraform destroy -input=false -auto-approve -no-color
