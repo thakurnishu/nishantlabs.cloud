@@ -7,10 +7,6 @@ env:
   WORKING_DIRECTORY: 'infra'
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'infra/**'
   workflow_dispatch:
     inputs:
       action:
