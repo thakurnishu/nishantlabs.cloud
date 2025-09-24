@@ -1,4 +1,3 @@
 public
 resources
 .terraform*
-terraform.tfvars
