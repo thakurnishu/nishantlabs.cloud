@@ -2,6 +2,7 @@ name: Build
 
 env:
   AWS_REGION: us-east-1
+  WORKING_DIRECTORY: app
 
 on:
   push:
@@ -27,6 +28,8 @@ jobs:
       id-token: 'write'
       pull-requests: 'write'
     runs-on: ubuntu-latest
+    container:
+      image: hugomods/hugo:go
 
     steps:
     - uses: actions/checkout@v5
@@ -40,7 +43,21 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         aws-region: ${{ env.AWS_REGION }}
 
-    - name: List all S3 Buckets
+    - name: Hugo build
+      shell: bash
+      working-directory: ${{ env.WORKING_DIRECTORY }}
       run: |
-        aws s3 ls
+        hugo --minify
 
+    - name: Sync public directory with S3 bucket
+      working-directory: ${{ env.WORKING_DIRECTORY }}
+      run: |
+        aws s3 sync public/ s3://${{ secrets.PORTFOLIO_BUCKET_NAME }}/ --delete --exact-timestamps
+
+
+    - name: Invalidate CloudFront cache
+      if: success()
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --paths "/*"
