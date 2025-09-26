@@ -1,8 +1,5 @@
 ---
-title: "Test"
-description: "Learn about some of my projects."
-cascade:
-  showReadingTime: true
-showAuthorBottom : false
+title: "Projects"
+description: "Learn about some of my projects"
+showAuthorBottom: true
 ---
-This section contains all my current projects.
