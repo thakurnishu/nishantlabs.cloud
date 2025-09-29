@@ -9,6 +9,9 @@ clean:
 	rm -fr app/public
 	rm -fr app/resources
 
+img:
+	bash image-processing.sh
+
 ## Show available commands
 help:
 	@echo "Available make commands:"

@@ -7,7 +7,7 @@
 
 # Set default values
 QUALITY="${1:-80}"
-DIRECTORIES=("./content/posts" "./content/projects" "./content/about")
+DIRECTORIES=("./app/content/posts" "./app/content/projects" "./app/content/about")
 
 # Color codes for output
 RED='\033[0;31m'
