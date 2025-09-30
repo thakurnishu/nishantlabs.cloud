@@ -1,6 +1,8 @@
 ---
 title: Azure Website Deployment
 date: 2023-07-18
+tags: ["azure", "static website", "ci/cd", "cdn"]
+showTaxonomies: true
 ---
 
 GitHub: [🔗 Link](https://github.com/thakurnishu/StaticWebsite-AzureCloud) | Hashnode: [🔗 Link](https://nishantsingh.hashnode.dev/10weeksofcloudops-firstweek)

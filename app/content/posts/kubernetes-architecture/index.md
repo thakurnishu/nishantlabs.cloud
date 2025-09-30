@@ -4,6 +4,7 @@ date: 2025-08-06
 tags: ["k8s", "architecture"]
 series: ["Kubernetes"]
 series_order: 1
+showTaxonomies: true
 ---
 Hi Everyone, 
 

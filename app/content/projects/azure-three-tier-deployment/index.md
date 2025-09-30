@@ -1,6 +1,8 @@
 ---
 title: Azure 3-Tier Deployment
 date: 2023-08-01
+tags: ["azure", "3-tier", "autoscaling", "azure cli"]
+showTaxonomies: true
 ---
 
 GitHub: [🔗 Link](https://github.com/thakurnishu/Tier3WebApplication-AzureCloud) | Hashnode: [🔗 Link](https://nishantsingh.hashnode.dev/10weeksofcloudops-secondweek)

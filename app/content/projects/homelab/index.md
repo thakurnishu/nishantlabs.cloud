@@ -1,6 +1,8 @@
 ---
 title: Homelab
 date: 2025-01-22
+tags: ["homelab", "k8s",]
+showTaxonomies: true
 ---
 
 **Github:** [🔗 Link](https://github.com/thakurnishu/homelab)
