@@ -1,6 +1,8 @@
 ---
 title: Portfolio
 date: 2025-08-06
+tags: ["portfolio", "static website", "aws", "s3", "cloudfront", "cdn"]
+showTaxonomies: true
 ---
 
 **Website:** [🔗 Link](https://nishantlabs.cloud) | **GitHub:** [🔗 Link](https://github.com/thakurnishu/nishantlabs.cloud)

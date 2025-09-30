@@ -1,6 +1,8 @@
 ---
 title: Ragfolio
 date: 2025-07-25
+tags: ["aI", "python", "rag", "gcp", "cloud run", "terraform"]
+showTaxonomies: true
 ---
 
 **Website:** [🔗 Link](https://ragfolio.nishantlabs.cloud/)  | **Github**: [🔗 Link](https://github.com/thakurnishu/RAGfolio)
