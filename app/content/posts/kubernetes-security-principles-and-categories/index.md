@@ -81,7 +81,7 @@ Some of the basic things one should do are mentioned below.
 
 - **Always use secrets**, never hardcode any credentials.
 - Use **Role-Based Access Control (RBAC)** to give access to anyone in the team.
-- Use **container sandboxing** by isolating containers from the host system. Even if an attacker gets access to a container, your host machine is safe.
+- Use **container sandboxing** by isolating containers from the host system. Even if an attacker gets access to a container, your host machine is safe. Examples: kata containers, gVisor
 - Apply **container hardening** by:  
   - Running containers as **non-root users**.  
   - Having **read-only filesystems**.  
