@@ -21,11 +21,20 @@ showAuthorBottom : false
     </thead>
     <tbody>
         <tr>
+            <td rowspan=3><img class="customEntitityLogo" src="images/solytics.png"/></td>
+            <td><a href="https://www.solytics-partners.com/" target="_blank">Solytics Partner</a></td>
+            <td>Devops Consultant</td>
+            <td>Dec 2025 - Present</td>
+            <td>Remote</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
             <td rowspan=3><img class="customEntitityLogo" src="images/confidential.webp"/></td>
             <td rowspan=3><a target="_blank">JBBKJ Pvt Ltd</a></td>
             <td>Independent Contractor</td>
-            <td>2024 - Present</td>
-            <td>Full Remote </br> Punjab, India</td>
+            <td>Mar 2024 - Dec 2025</td>
+            <td>Remote</td>
         </tr>
     </tbody>
 </table>
