@@ -1,3 +1,7 @@
+html {
+  font-size: 15pt;
+}
+
 @media screen and (min-width: 0px) {
     .customthumb {
         width: 100%;
