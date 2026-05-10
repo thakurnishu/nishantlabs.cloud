@@ -1,10 +1,10 @@
 ---
 title: "About"
-date: 2022-06-13T21:28:51+01:00
 draft: false
 
 showTableOfContents: true
 showAuthorBottom : false
+showDate: false
 ---
 
 ## Experience
@@ -21,17 +21,22 @@ showAuthorBottom : false
     </thead>
     <tbody>
         <tr>
-            <td rowspan=3><img class="customEntitityLogo" src="images/solytics.png"/></td>
-            <td><a href="https://www.solytics-partners.com/" target="_blank">Solytics Partner</a></td>
+            <td rowspan=2><img class="customEntitityLogo" src="images/solytics.png"/></td>
+            <td rowspan=2><a href="https://www.solytics-partners.com/" target="_blank">Solytics Partner</a></td>
+            <td>Associate DevOps Engineer</td>
+            <td>Mar 2026 - Present</td>
+            <td>Remote</td>
+        </tr>
+        <tr>
             <td>Devops Consultant</td>
-            <td>Dec 2025 - Present</td>
+            <td>Dec 2025 - Mar 2026</td>
             <td>Remote</td>
         </tr>
     </tbody>
     <tbody>
         <tr>
-            <td rowspan=3><img class="customEntitityLogo" src="images/confidential.webp"/></td>
-            <td rowspan=3><a target="_blank">JBBKJ Pvt Ltd</a></td>
+            <td><img class="customEntitityLogo" src="images/confidential.webp"/></td>
+            <td>JBBKJ Pvt Ltd</td>
             <td>Independent Contractor</td>
             <td>Mar 2024 - Dec 2025</td>
             <td>Remote</td>

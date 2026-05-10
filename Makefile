@@ -1,8 +1,12 @@
-.PHONY: dev clean help
+.PHONY: dev clean help setup
 
 ## Run Hugo server (clean it first)
 dev: clean
 	hugo serve -s app/ -p 1313
+
+## Setup
+setup:
+	git submodule update --init --recursive
 
 ## Remove generated static files
 clean:
